@@ -1,0 +1,277 @@
+<div  ui-view="menu-content">
+          <!-- BEGIN HEADER -->
+        <div class="page-header md-shadow-z-1-i navbar navbar-fixed-top" >
+          <!-- BEGIN HEADER INNER -->
+          <div class="page-header-inner"  style="background-color:#364150;">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+              <!--<a href="index.html">
+              <img src="{{resturant.coverUrl}}" alt="logo" style="width:20%;height:30px;border-radius:25px" class="logo-default"/>
+			  
+              </a>-->
+              <b> <center style="color:orange; padding-top:13px;">{{restname}}</center></b>
+              <div class="menu-toggler sidebar-toggler hide">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+              </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+              <ul class="nav navbar-nav pull-right">
+                
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                  <a ui-sref="app.login" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                  <!--<img alt="" class="img-circle" src="../assets/admin/layout/img/avatar3_small.jpg"/>-->
+                  <span class="username username-hide-on-mobile" >
+                  Logout </span>
+                  <!--<i class="fa fa-angle-down"></i>-->
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-default">
+                    <li>
+                      <a ui-sref="app.login">
+                      <i class="icon-key"></i> Log Out </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-quick-sidebar-toggler">
+                  <a href="javascript:;" class="dropdown-toggle">
+                  <i class="icon-logout"></i>
+                  </a>
+                </li>
+                <!-- END QUICK SIDEBAR TOGGLER -->
+              </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+          </div>
+          <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER -->
+        <div class="clearfix">
+        </div>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+          <div class="page-sidebar-wrapper">
+            <div class="page-sidebar navbar-collapse collapse">
+              <ul class="page-sidebar-menu page-sidebar-menu-light " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <li class="sidebar-toggler-wrapper">
+                  <div class="sidebar-toggler">
+                  </div>
+                </li>
+                <li ng-class="{'active': $route.current.activetab == 'add'}" ng-show="loggedInUser == 'admin@gmail.com'">
+                  <a href="#!/app/add">
+                  <i class="icon-settings"></i>
+                  <span class="title">Add Resturant</span>
+                  <span class="selected"></span>
+                  <span class="arrow"></span>
+                  </a>
+                </li>
+                <li ng-class="{'active': $route.current.activetab == 'list'}" ng-show="loggedInUser == 'admin@gmail.com'">
+                  <a href="#!/app/list">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Resturant List</span>
+                    <span class="selected"></span>
+                    <span class="arrow "></span>
+                  </a>
+                </li>
+                <li ng-class="{'active': $route.current.activetab == 'addMenu'}" ng-if="loggedInUser != 'admin@gmail.com'">
+                  <a href="" ui-sref="app.addMenu">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Add Menu</span>
+                    <span class="selected"></span>
+                    <span class="arrow "></span>
+                  </a>
+                </li>
+                
+                <li ng-class="{'active': $route.current.activetab == 'updateRestaurant'}"  class="active" ng-if="loggedInUser != 'admin@gmail.com'">
+                  <a href="" ui-sref="app.updateRestaurant">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Update Restaurant</span>
+                    <span class="selected"></span>
+                    <span class="arrow "></span>
+                  </a>
+                </li>
+                <!--<li ng-class="{'active': $route.current.activetab == 'list'}" ng-if="loggedInUser != 'admin@gmail.com'">
+                  <a href="">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">Add Deals</span>
+                    <span class="selected"></span>
+                    <span class="arrow "></span>
+                  </a>
+                </li>-->
+                <li ng-class="{'active': $route.current.activetab == 'viewOrders'}" ng-if="loggedInUser != 'admin@gmail.com'">
+                  <a href="" ui-sref="app.viewOrders">
+                    <i class="icon-briefcase"></i>
+                    <span class="title">View Orders</span>
+                    <span class="selected"></span>
+                    <span class="arrow "></span>
+                  </a>
+                </li>
+                
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+		</div>	
+	
+
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- END STYLE CUSTOMIZER -->
+			<!-- BEGIN PAGE HEADER-->
+			<h3 class="page-title">
+			 Update  Resturant
+			</h3>
+			
+			<!-- END PAGE HEADER-->
+			<!-- BEGIN PAGE CONTENT-->
+			
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN SAMPLE FORM PORTLET-->
+					<div class="portlet light bordered">
+						<div class="portlet-title">
+							<div class="caption font-green-haze">
+								<i class="icon-settings font-green-haze"></i>
+								<span class="caption-subject bold uppercase"> Update Resturant</span>
+							</div>
+							<!--<div class="actions">
+								<a class="btn btn-circle btn-icon-only blue" href="javascript:;">
+								<i class="icon-cloud-upload"></i>
+								</a>
+								<a class="btn btn-circle btn-icon-only green" href="javascript:;">
+								<i class="icon-wrench"></i>
+								</a>
+								<a class="btn btn-circle btn-icon-only red" href="javascript:;">
+								<i class="icon-trash"></i>
+								</a>
+								<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;" data-original-title="" title="">
+								</a>
+							</div>-->
+						</div>
+						<div class="portlet-body form">
+							<form role="form" class="form-horizontal">
+								<div class="form-body">
+									<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Resturant Name</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.name" class="form-control" id="form_control_1" placeholder="resturant name">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Resturant Address</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.address" class="form-control" id="form_control_1" placeholder="resturant address">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+									<!--<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Resturant Category</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.category" class="form-control" id="form_control_1" placeholder="resturant category">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>-->
+									<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Resturant Latitude</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.lat" class="form-control" id="form_control_1" placeholder="resturant latitude">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Resturant Longitude</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.lng" class="form-control" id="form_control_1" placeholder="resturant longitude">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Food Type</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.foodtype" class="form-control" id="form_control_1" placeholder="food types">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+                  <div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Phone Number</label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.phone" class="form-control" id="form_control_1" placeholder="Phone Number">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+                  <div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Delivery Time </label>
+										<div class="col-md-10">
+											<input type="text" ng-model="resturant.delivery" class="form-control" id="form_control_1" placeholder="Delivery Time">
+											<div class="form-control-focus">
+											</div>
+										</div>
+									</div>
+                  <div class="form-group form-md-line-input">
+										<label class="col-md-2 control-label" for="form_control_1">Restaurant Cover</label>
+										<div class="col-md-10">
+											<!--<input type="file" ng-model="user.lng" class="form-control" id="form_control_1" placeholder="Enter your longitude">-->
+                                            
+											<div class="form-control-focus">
+											</div>
+											<div flow-init
+											flow-files-submitted="$flow.upload()"
+											flow-file-success="$file.msg = $message">
+
+										<!--<input type="file" flow-btn/>
+										Input OR Other element as upload button-->
+										<span class="btn" flow-btn>Upload File</span>
+										<span class="btn" ng-click="upload($flow.files[0])">Upload</span>
+
+										<!--<table>
+											<tr ng-repeat="file in $flow.files">
+												<td>{{$index+1}}</td>
+												<td>{{file.name}}</td>
+												<td>{{file.msg}}</td>
+											</tr>
+										</table>-->
+										<br>	<br>	
+										<img flow-img="$flow.files[0]" src="{{resturant.coverUrl}}" style="width: 50%; height:250px"/>
+										</div>
+										</div>
+										
+									</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="col-md-offset-2 col-md-10">
+											<button type="button" ng-click="update()" class="btn blue">Update Resturant</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+				
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+</div>

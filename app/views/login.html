@@ -1,0 +1,51 @@
+<div>
+    <center><b><h1><i>ADMIN / MANAGER</i></h1></b></center>
+</div>
+<form name="userForm"  class="form-horizontal margin-bottom-40 col-md-offset-3 col-xs-offset-1 col-sm-offset-1 top-distance-form" role="form" novalidate>
+    <div class="form-group form-md-line-input">
+        <label for="inputEmail12" class="col-md-2 control-label">Email</label>
+        <div class="col-md-4">
+            <div class="input-icon right">
+                <input type="email" class="form-control" name="user.email" ng-model="user.email" placeholder="Email">
+                <p ng-show="userForm.user.email.$valid" class="help-block">You email is required.</p>
+                <div class="form-control-focus">
+                </div>
+                <i class="fa fa-envelope-o"></i>
+            </div>
+        </div>
+    </div>
+    <div class="form-group form-md-line-input">
+        <label for="inputPassword1" class="col-md-2 control-label">Password</label>
+        <div class="col-md-4">
+            <div class="input-icon right">
+                <input type="password" class="form-control" ng-model="user.password" name="password" placeholder="Password">
+                <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You email is required.</p>
+                <div class="form-control-focus">
+                </div>
+                <i class="fa fa-key"></i>
+            </div>
+            <div class="help-block">
+                with right aligned icon
+            </div>
+        </div>
+    </div>
+    <div class="form-group form-md-line-input">
+        <div class="col-md-offset-2 col-md-4">
+            <div class="md-checkbox-list">
+                <div class="md-checkbox">
+                    <input type="checkbox" id="checkbox11111" class="md-check">
+                    <label for="checkbox11111">
+                    <span></span>
+                    <span class="check"></span>
+                    <span class="box"></span>
+                    Remember me </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn green" ng-click="signIn()">Sign in</button>
+        </div>
+    </div>
+</form>
